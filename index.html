@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Força o navegador a não armazenar em cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Capivara Wi-Fi Trigger 🍊</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Palco do Mascote Capivara Animado -->
+        <div class="header">
+            <div id="mascot-stage" class="mascot-stage">
+                <svg class="capy-svg" viewBox="0 0 180 160" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Água da Lagoa / Ofurô com Ondas -->
+                    <ellipse class="water-ripple" cx="90" cy="144" rx="78" ry="14" fill="#a2d2ff" />
+                    <ellipse cx="90" cy="144" rx="66" ry="10" fill="#bde0fe" />
+                    
+                    <!-- Fumaça Zen do Banho -->
+                    <circle class="steam-cloud steam-1" cx="44" cy="120" r="7" fill="#ffffff" />
+                    <circle class="steam-cloud steam-2" cx="136" cy="116" r="9" fill="#ffffff" />
+
+                    <!-- Corpo na Água -->
+                    <path d="M 40 144 C 40 104, 140 104, 140 144 Z" fill="#8d5b36" />
+
+                    <!-- Orelhinha Esquerda Animada -->
+                    <g class="capy-ear-left">
+                        <ellipse cx="48" cy="52" rx="9" ry="13" fill="#6f4526" />
+                        <ellipse cx="48" cy="53" rx="5" ry="8" fill="#e5989b" />
+                    </g>
+
+                    <!-- Orelhinha Direita Animada -->
+                    <g class="capy-ear-right">
+                        <ellipse cx="132" cy="52" rx="9" ry="13" fill="#6f4526" />
+                        <ellipse cx="132" cy="53" rx="5" ry="8" fill="#e5989b" />
+                    </g>
+
+                    <!-- Cabeça da Capivara -->
+                    <path d="M 52 82 C 48 44, 132 44, 128 82 C 128 122, 118 128, 90 128 C 62 128, 52 122, 52 82 Z" fill="#8d5b36" />
+
+                    <!-- Focinho Redondo & Fofo -->
+                    <ellipse cx="90" cy="100" rx="34" ry="22" fill="#6f4526" />
+                    <ellipse cx="81" cy="98" rx="3.5" ry="4.5" fill="#382010" />
+                    <ellipse cx="99" cy="98" rx="3.5" ry="4.5" fill="#382010" />
+                    
+                    <!-- Boquinha de Paz -->
+                    <path id="capy-mouth" d="M 85 107 Q 90 111 95 107" stroke="#382010" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+                    <!-- Bochechas Rosadas -->
+                    <ellipse cx="55" cy="98" rx="7.5" ry="5.5" fill="#f28482" opacity="0.65"/>
+                    <ellipse cx="125" cy="98" rx="7.5" ry="5.5" fill="#f28482" opacity="0.65"/>
+
+                    <!-- Olhinhos Zen (atualizados dinamicamente pelo JS) -->
+                    <g id="capy-eyes">
+                        <path id="eye-left" d="M 64 74 Q 72 70 80 74" stroke="#382010" stroke-width="3.5" fill="none" stroke-linecap="round" />
+                        <path id="eye-right" d="M 100 74 Q 108 70 116 74" stroke="#382010" stroke-width="3.5" fill="none" stroke-linecap="round" />
+                    </g>
+
+                    <!-- Laranjinha Yuzu Flutuando na Cabeça -->
+                    <g class="yuzu-group">
+                        <circle cx="90" cy="38" r="13" fill="#ff9e00" stroke="#e85d04" stroke-width="1.5" />
+                        <ellipse cx="86" cy="34" rx="4" ry="2" fill="#ffe3b0" opacity="0.8" />
+                        <path d="M 90 25 C 96 19, 104 21, 102 27 C 98 29, 92 27, 90 25 Z" fill="#38b000" stroke="#206a00" stroke-width="1" />
+                    </g>
+                </svg>
+            </div>
+
+            <h1>CapyPortal Wi-Fi 🍊</h1>
+            <p>O roteador tá travando seu sinal? A capivara abre o caminho com calma e estilo.</p>
+        </div>
+
+        <!-- Box de Status -->
+        <div id="status" class="status-box">Avaliando a lagoa da rede...</div>
+
+        <!-- Botão Principal Animado -->
+        <a href="http://neverssl.com" target="_blank" class="btn btn-main" onclick="floodNetwork()">
+            <span>⚡ Forçar Portal Cativo</span>
+        </a>
+
+        <!-- Endpoints dos Sistemas -->
+        <div class="section-title">Endpoints de Verificação</div>
+        <div class="grid">
+            <a href="http://captive.apple.com/hotspot-detect.html" target="_blank" class="btn btn-apple">🍎 Apple</a>
+            <a href="http://connectivitycheck.gstatic.com/generate_204" target="_blank" class="btn btn-google">🤖 Android</a>
+            <a href="http://msftconnecttest.com/redirect" target="_blank" class="btn btn-ms" style="grid-column: span 2;">🪟 Windows</a>
+        </div>
+
+        <!-- Portais de Roteadores / Gateways -->
+        <div class="section-title">Gateways de Roteador</div>
+        <div class="grid">
+            <a href="http://192.168.1.1" target="_blank" class="btn btn-ip">192.168.1.1</a>
+            <a href="http://192.168.0.1" target="_blank" class="btn btn-ip">192.168.0.1</a>
+            <a href="http://10.0.0.1" target="_blank" class="btn btn-ip">10.0.0.1</a>
+            <a href="http://1.1.1.1" target="_blank" class="btn btn-ip">1.1.1.1</a>
+        </div>
+        
+        <!-- Terminal de Logs da Capivara -->
+        <div class="section-title">Diário da Capivara</div>
+        <div class="log-area" id="log"></div>
+    </div>
+
+    <!-- Contêiner oculto para disparos simultâneos -->
+    <div id="hidden-frames"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
